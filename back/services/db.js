@@ -15,6 +15,7 @@ const mongoConnect = async () => {
 export const robotsConnect = async (collection = 'robots') => {
     await mongoConnect();
     const robotSchema = mongoose.Schema({
+        robotName: String,
         speed: Number,
         strength: Number,
         creationDate: String,

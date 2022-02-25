@@ -2,7 +2,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
-import robotRouter from './routes/robots.routes';
+import robotRouter from './routes/robots.routes.js';
 
 dotenv.config();
 
