@@ -11,6 +11,7 @@ function App() {
 
   useEffect(() => {
     api.getRobots().then((resp) => {
+      console.log(resp.data);
       dispatch(action.loadRobots(resp.data));
     });
   }, []);

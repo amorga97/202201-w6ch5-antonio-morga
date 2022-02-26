@@ -9,10 +9,10 @@ export const robotsReducer = (state = initialState, action) => {
     case actionTypes.addRobot:
       return [...state, action.payload];
     case actionTypes.deleteRobot:
-      return state.filter((item) => item.id !== action.payload.id);
+      return state.filter((item) => item._id !== action.payload._id);
     case actionTypes.updateRobot:
       return state.map((item) =>
-        item.id === action.payload.id ? action.payload : item
+        item._id === action.payload._id ? action.payload : item
       );
     default:
       return state;
