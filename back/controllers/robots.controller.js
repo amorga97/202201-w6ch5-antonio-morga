@@ -1,7 +1,8 @@
 import * as crud from '../services/robots-crud.js';
 import { robotsConnect } from '../services/db.js';
+import { robotsForTesting } from '../test-utils/test-robots.js';
 
-const Robot = await robotsConnect();
+const Robot = robotsConnect();
 
 export const getAllRobots = async (req, resp) => {
     crud.getAllRobots(Robot).then((data) => {
@@ -31,4 +32,9 @@ export const deleteRobot = async (req, resp) => {
     crud.deleteRobot(req.params.id, Robot).then((data) => {
         resp.json(data);
     });
+};
+
+export const install = () => {
+    Robot.collection.drop();
+    return Robot.insertMany(robotsForTesting, { rawResult: true });
 };
