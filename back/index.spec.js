@@ -13,7 +13,7 @@ describe('Given the server app on index.js', () => {
         installResponse = await install();
         sampleDocId = installResponse.insertedIds[0].toString();
     });
-    afterEach(async () => {
+    afterAll(async () => {
         connection.close();
     });
 
