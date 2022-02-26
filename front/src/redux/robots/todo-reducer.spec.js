@@ -1,4 +1,4 @@
-import { todoReducer } from './todo-reducer';
+import { robotsReducer } from './robots-reducer';
 import * as action from './action-creators';
 import { actionTypes } from './action-types';
 
@@ -6,7 +6,7 @@ jest.mock('./action-creators');
 const mockTask = { id: 1, title: 'do sth', isComplete: false };
 let mockState = [];
 
-describe('Given the function todoReducer', () => {
+describe('Given the function robotsReducer', () => {
   beforeEach(() => {
     mockState = [
       { id: 123, title: 'create to-do list', isComplete: false },
@@ -19,7 +19,7 @@ describe('Given the function todoReducer', () => {
         type: actionTypes.addTask,
         payload: mockTask,
       });
-      expect(todoReducer(mockState, action.addTask(mockTask))).toEqual([
+      expect(robotsReducer(mockState, action.addTask(mockTask))).toEqual([
         { id: 123, title: 'create to-do list', isComplete: false },
         { id: 456, title: 'test to-do list', isComplete: false },
         { id: 1, title: 'do sth', isComplete: false },
@@ -33,7 +33,7 @@ describe('Given the function todoReducer', () => {
         payload: { ...mockTask, id: 456 },
       });
       expect(
-        todoReducer(mockState, action.deleteTask({ ...mockTask, id: 456 }))
+        robotsReducer(mockState, action.deleteTask({ ...mockTask, id: 456 }))
       ).toEqual([{ id: 123, title: 'create to-do list', isComplete: false }]);
     });
   });
@@ -44,7 +44,7 @@ describe('Given the function todoReducer', () => {
         payload: { ...mockTask, id: 456, isComplete: true },
       });
       expect(
-        todoReducer(mockState, action.updateTask({ ...mockTask, id: 456 }))
+        robotsReducer(mockState, action.updateTask({ ...mockTask, id: 456 }))
       ).toEqual([
         { id: 123, title: 'create to-do list', isComplete: false },
         { id: 456, title: 'do sth', isComplete: true },

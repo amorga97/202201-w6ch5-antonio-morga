@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import * as api from '../services/api';
-import * as action from '../redux/todo/action-creators';
+import * as action from '../redux/robots/action-creators';
 import { useEffect } from 'react';
 import { ListItem } from './listItem';
 
@@ -9,7 +8,7 @@ export function List() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(action.loadTasks(dispatch));
+    dispatch(action.loadRobots(dispatch));
   }, [dispatch]);
 
   return (

@@ -1,18 +1,17 @@
 import { useDispatch } from 'react-redux';
-import * as action from '../redux/todo/action-creators';
-import * as api from '../services/api';
+import * as action from '../redux/robots/action-creators';
 
 export function ListItem({ item }) {
   const dispatch = useDispatch();
   const handleDelete = () => {
-    dispatch(action.deleteTask(item, dispatch));
+    dispatch(action.deleteRobot(item, dispatch));
   };
   const handleUpdate = () => {
     const updatedTask = {
       ...item,
       isComplete: !item.isComplete,
     };
-    dispatch(action.updateTask(updatedTask));
+    dispatch(action.updateRobot(updatedTask));
   };
   return (
     <li className="list__item">
