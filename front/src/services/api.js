@@ -1,19 +1,19 @@
 import axios from 'axios';
 
-const apiUrl = ' http://localhost:4500/tasks/';
+const apiUrl = ' http://localhost:4500/robots/';
 
-export const getTasks = () => {
+export const getRobots = () => {
   return axios.get(apiUrl);
 };
 
-export const addTask = (task) => {
-  return axios.post(apiUrl, task);
+export const addRobot = (Robot) => {
+  return axios.post(apiUrl, Robot);
 };
 
-export const deleteTask = (task) => {
-  return axios.delete(apiUrl + task.id);
+export const deleteRobot = (Robot) => {
+  return axios.delete(apiUrl + Robot._id);
 };
 
-export const updateTask = (task) => {
-  return axios.patch(apiUrl + task.id, task);
+export const updateRobot = (Robot) => {
+  return axios.patch(apiUrl + Robot._id, Robot);
 };

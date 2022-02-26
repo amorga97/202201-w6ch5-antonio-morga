@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import * as api from '../services/api';
-import * as action from '../redux/todo/action-creators';
+import * as action from '../redux/robots/action-creators';
 import { useDispatch } from 'react-redux';
 
 export function Form() {
@@ -17,7 +16,7 @@ export function Form() {
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    dispatch(action.addTask(formState));
+    dispatch(action.addRobot(formState));
     setFormState({ title: '', isComplete: false });
   };
 

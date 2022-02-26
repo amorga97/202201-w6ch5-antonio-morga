@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { todoReducer } from './todo/todo-reducer';
+import { robotsReducer } from './robots/robots-reducer';
 
 export const store = configureStore({
-  reducer: todoReducer,
+  reducer: robotsReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       thunk: {},
