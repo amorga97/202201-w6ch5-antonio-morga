@@ -6,24 +6,12 @@ export function ListItem({ item }) {
   const handleDelete = () => {
     dispatch(action.deleteRobot(item));
   };
-  const handleUpdate = () => {
-    const updatedTask = {
-      ...item,
-      isComplete: !item.isComplete,
-    };
-    dispatch(action.updateRobot(updatedTask));
-  };
+
   return (
     <li className="list__item">
-      <input
-        type="checkbox"
-        checked={item.isComplete}
-        name=""
-        id=""
-        onChange={handleUpdate}
-      />
-
-      <p className="list__item-title">{item.robotName}</p>
+      <img className="list__item-image" src={item.img} alt="robot" />
+      <h2 className="list__item-title">{item.robotName}</h2>
+      <p>Power index: {+item.speed + +item.strength}</p>
       <button onClick={handleDelete}>Delete</button>
     </li>
   );

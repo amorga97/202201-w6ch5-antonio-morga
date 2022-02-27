@@ -14,7 +14,7 @@ function App() {
       console.log(resp.data);
       dispatch(action.loadRobots(resp.data));
     });
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="App">
