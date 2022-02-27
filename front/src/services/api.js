@@ -6,6 +6,10 @@ export const getRobots = () => {
   return axios.get(apiUrl);
 };
 
+export const getOneRobot = (id) => {
+  return axios.get(apiUrl + id);
+};
+
 export const addRobot = (Robot) => {
   return axios.post(apiUrl, Robot);
 };
