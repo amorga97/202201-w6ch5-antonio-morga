@@ -1,26 +1,25 @@
 import { useDispatch } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Form } from './components/form';
-import { List } from './components/list';
-import * as api from './services/api';
 import * as action from './redux/robots/action-creators';
 import { useEffect } from 'react';
+import { Home } from './components/home/home';
+import { Details } from './components/details/details';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    api.getRobots().then((resp) => {
-      console.log(resp.data);
-      dispatch(action.loadRobots(resp.data));
-    });
+    dispatch(action.loadRobots());
   }, [dispatch]);
 
   return (
     <div className="App">
-      <h1>Todo List</h1>
-      <Form />
-      <List />
+      <h1>Awesome Robots!</h1>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/details/:id" element={<Details />} />
+      </Routes>
     </div>
   );
 }

@@ -72,3 +72,22 @@
   width: 100px;
   height: auto;
 }
+
+.details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.details__image {
+  width: auto;
+  height: 200px;
+}

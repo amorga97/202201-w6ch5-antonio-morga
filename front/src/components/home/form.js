@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import * as action from '../redux/robots/action-creators';
+import * as action from '../../redux/robots/action-creators';
 import { useDispatch } from 'react-redux';
 
 export function Form() {

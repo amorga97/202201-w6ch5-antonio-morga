@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import * as action from '../redux/robots/action-creators';
+import * as action from '../../redux/robots/action-creators';
 import { useEffect } from 'react';
 import { ListItem } from './listItem';
 
@@ -14,7 +14,7 @@ export function List() {
   return (
     <ul className="list">
       {listState.map((item) => (
-        <ListItem key={item.id} item={item} />
+        <ListItem key={item._id} item={item} />
       ))}
     </ul>
   );
