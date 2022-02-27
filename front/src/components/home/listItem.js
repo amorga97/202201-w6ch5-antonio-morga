@@ -9,13 +9,13 @@ export function ListItem({ item }) {
   };
 
   return (
-    <Link to={`/details/${item._id}`}>
-      <li className="list__item">
-        <img className="list__item-image" src={item.img} alt="robot" />
+    <li className="list__item">
+      <img className="list__item-image" src={item.img} alt="robot" />
+      <Link to={`/details/${item._id}`}>
         <h2 className="list__item-title">{item.robotName}</h2>
-        <p>Power index: {+item.speed + +item.strength}</p>
-        <button onClick={handleDelete}>Delete</button>
-      </li>
-    </Link>
+      </Link>
+      <p>Power index: {+item.speed + +item.strength}</p>
+      <button onClick={handleDelete}>Delete</button>
+    </li>
   );
 }
